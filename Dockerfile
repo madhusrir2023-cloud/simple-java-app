@@ -1,5 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17
 WORKDIR /app
-COPY target/test-java-app-1.0.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/*.jar app.jar
+CMD ["sh", "-c", "java -jar app.jar && tail -f /dev/null"]
