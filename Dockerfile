@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM eclipse-temurin:17
 WORKDIR /app
 COPY target/*.jar app.jar
 CMD ["sh", "-c", "java -jar app.jar && tail -f /dev/null"]
